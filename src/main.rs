@@ -1,9 +1,12 @@
+// use udemy::Animal;
+// use udemy::Log;
+// use udemy::Person;
+// use udemy::PersonId;
+// use udemy::check_person_id;
 
-use udemy::Person;
-use udemy::PersonId;
-use udemy::Animal;
-use udemy::Log;
-use udemy::check_person_id;
+// use udemy::*;
+
+use udemy::learning_rust::{Animal, Log, Person, PersonId, check_person_id};
 
 fn main() {
     // let mut person1 = Person {
@@ -34,6 +37,4 @@ fn main() {
     animal2.display_info();
     animal1.alert_some_self();
     // Animal::alert_some();
-
 }
-
