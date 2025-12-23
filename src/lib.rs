@@ -1,6 +1,17 @@
 //trait
 
 pub mod learning_rust {
+    mod top_level {
+        pub fn hi_there() {
+            println!("Hi there!");
+        }
+
+        pub mod low_level {
+            pub fn hello_world() {
+                println!("Hello world!");
+            }
+        }
+    }
 
     pub trait Log {
         fn display_info(&self);
@@ -29,6 +40,18 @@ pub mod learning_rust {
 
     impl Log for Person {
         fn display_info(&self) {
+
+            // absolute path import
+            // crate point to -> src/lib.rs and src/main.rs
+            println!("====crate point to -> src/lib.rs and src/main.rs====");
+            crate::learning_rust::top_level::hi_there();
+            crate::learning_rust::top_level::low_level::hello_world();
+
+            println!("====relative path import====");
+            // relative path import
+            top_level::hi_there();
+            top_level::low_level::hello_world();
+
             println!(
                 " {} {} {} {:?}",
                 self.name, self.last_name, self.age, self.id
